@@ -27,12 +27,12 @@ class SeleniumMiddleware:
 
         """
 
-        webdriver_base_path = f'selenium.webdriver.{driver_name}'
+        webdriver_base_path = 'selenium.webdriver.{}'.format(driver_name)
 
-        driver_klass_module = import_module(f'{webdriver_base_path}.webdriver')
+        driver_klass_module = import_module('{}.webdriver'.format(webdriver_base_path))
         driver_klass = getattr(driver_klass_module, 'WebDriver')
 
-        driver_options_module = import_module(f'{webdriver_base_path}.options')
+        driver_options_module = import_module('{}.options'.format(webdriver_base_path))
         driver_options_klass = getattr(driver_options_module, 'Options')
 
         driver_options = driver_options_klass()
@@ -41,7 +41,7 @@ class SeleniumMiddleware:
 
         driver_kwargs = {
             'executable_path': driver_executable_path,
-            f'{driver_name}_options': driver_options
+            '{}_options'.format(driver_name): driver_options
         }
 
         self.driver = driver_klass(**driver_kwargs)
