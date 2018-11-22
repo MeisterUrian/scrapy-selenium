@@ -10,6 +10,13 @@ git clone https://github.com/MeisterUrian/scrapy-selenium
 cd scrapy-selenium
 $ pip install .
 ```
+
+or
+
+```
+pip install git+https://github.com/MeisterUrian/scrapy-selenium.git
+```
+
 You should use **python>=3._5_**
 You will also need one of the Selenium [compatible browsers](http://www.seleniumhq.org/about/platforms.jsp).
 
